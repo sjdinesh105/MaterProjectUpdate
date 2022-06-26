@@ -1,0 +1,10 @@
+C:\Dinesh\MaterProjectUpdate\Mater.Data\bin\Debug\Mater.Data.dll
+C:\Dinesh\MaterProjectUpdate\Mater.Data\bin\Debug\Mater.Data.pdb
+C:\Dinesh\MaterProjectUpdate\Mater.Data\bin\Debug\Dapper.dll
+C:\Dinesh\MaterProjectUpdate\Mater.Data\bin\Debug\System.Data.SqlClient.dll
+C:\Dinesh\MaterProjectUpdate\Mater.Data\bin\Debug\Dapper.xml
+C:\Dinesh\MaterProjectUpdate\Mater.Data\bin\Debug\System.Data.SqlClient.xml
+C:\Dinesh\MaterProjectUpdate\Mater.Data\obj\Debug\Mater.Data.csproj.CoreCompileInputs.cache
+C:\Dinesh\MaterProjectUpdate\Mater.Data\obj\Debug\Mater.Data.csproj.CopyComplete
+C:\Dinesh\MaterProjectUpdate\Mater.Data\obj\Debug\Mater.Data.dll
+C:\Dinesh\MaterProjectUpdate\Mater.Data\obj\Debug\Mater.Data.pdb

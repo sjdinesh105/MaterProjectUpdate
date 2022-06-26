@@ -1,0 +1,92 @@
+﻿@model MaterCore.Web.Models.SummaryDTO
+
+@{
+    ViewData["Title"] = "Bed Summary Information";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h4>Bed Summary</h4>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Bed
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BedSummaryDetails[0].Status)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BedSummaryDetails[0].Patient)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BedSummaryDetails[0].DOB)
+            </th>
+
+            <th>
+                Presenting Issue
+            </th>
+
+            <th>
+                Last Comment
+            </th>
+            <th>
+                Last Update
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BedSummaryDetails[0].Nurse)
+            </th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.BedSummaryDetails)
+        { 
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Id)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Status)
+                    </td>
+                    <td>
+                        @Html.ActionLink(item.Patient+"", "Index","Patient",new { patientId = item.PatientId },null) 
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DOB)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PresentingIssue)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.LastComment)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.LastUpdate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nurse)
+                    </td>
+                    <td>
+                        @if (!String.IsNullOrEmpty(item.Patient))
+                        {
+                            <div>
+                                <a asp-action="AddComment" asp-route-id="@item.Id">Add Comment</a> |
+                                <a asp-action="Discharge" asp-route-id="@item.Id">Discharge</a> |
+                            </div>
+                        }
+                        @if (String.IsNullOrEmpty(item.Patient))
+                        {
+                            <a asp-action="Admit" asp-route-id="@item.Id">Admit</a>
+                        }
+                    </td>
+                </tr>
+            
+        }
+    </tbody>
+</table>
+
+<h6>Bed in Use:@Model.BedInUseCount</h6>
+<h6>Bed Free:@Model.BedInFreeCount</h6>
+<h6>Patient Admitted Today:@Model.PatientsAdmitedToday</h6>

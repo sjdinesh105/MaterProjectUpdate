@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "4mJpYfPky15Dk77TlQrwJPtpPma0IS6yaFcfVTXNI3J6y7Sh3mq/UQQ3x3KnmxzrqgD3MRiEVn/wSr6yWQQDhQ==",
+  "success": true,
+  "projectFilePath": "C:\\Dinesh\\MaterProjectUpdate\\MaterCore.Web\\MaterCore.Web.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\dinesh.jayapalan\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}

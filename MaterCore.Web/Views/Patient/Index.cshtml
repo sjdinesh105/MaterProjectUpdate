@@ -1,0 +1,61 @@
+﻿@model MaterCore.Web.Models.PatientSummaryDTO
+
+@{
+    ViewData["Title"] = "Patient Summary Information";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h4>Patient Detailed Summary</h4>
+
+
+<h6>Name: @Model.Name</h6>
+<h6>URN: @Model.URN</h6>
+<h6>Date of Birth: @Model.DOB.ToString("dd-MMM-yyyy")</h6>
+<h6>Bed: @Model.BedNo</h6>
+<h6>Presenting Issue: @Model.Issue</h6>
+
+<hr/>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CommentSummaryDetails[0].Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CommentSummaryDetails[0].Time)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CommentSummaryDetails[0].Nurse)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CommentSummaryDetails[0].Comment)
+            </th>
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.CommentSummaryDetails)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Date)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Time)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nurse)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Comment)
+                </td>
+
+            </tr>
+
+        }
+    </tbody>
+</table>
+<div>
+    <a href=@Url.Action("Index", "Home")>Back to List</a>
+</div>
